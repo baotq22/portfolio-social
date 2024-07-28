@@ -13,7 +13,7 @@ function Main() {
       <Router>
         <Routes>
           <Route path="/" element={<AppLayout />}>
-            <Route index path="/my-portfolio" element={<App />} />
+            <Route index path="/portfolio-social" element={<App />} />
             <Route path='/memory-game' element={<MemoryGame />} />
           </Route>
         </Routes>

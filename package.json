@@ -1,0 +1,49 @@
+{
+  "name": "my-portfolio",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "format": "prettier --write \"src/**/*.js\"",
+    "lint": "eslint src/**/*.js src/**/*.js",
+    "lint:fix": "eslint src/**/*.js --fix"
+  },
+  "dependencies": {
+    "0g": "^0.4.2",
+    "@reduxjs/toolkit": "^2.2.6",
+    "axios": "^1.7.2",
+    "classnames": "^2.5.1",
+    "dotenv": "^16.4.5",
+    "lodash": "^4.17.21",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-redux": "^9.1.2",
+    "react-router": "^6.23.1",
+    "react-router-dom": "^6.24.1",
+    "react-transition-group": "^4.4.5",
+    "uuid": "^10.0.0",
+    "uuidv4": "^6.2.13",
+    "yarn": "^1.22.22",
+    "zustand": "^4.5.4"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.66",
+    "@types/react-dom": "^18.2.22",
+    "@vitejs/plugin-react": "^4.3.1",
+    "eslint": "^8.57.0",
+    "eslint-plugin-react": "^7.34.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.6",
+    "react-error-overlay": "6.0.9",
+    "sass": "^1.77.6",
+    "vite": "^5.2.0"
+  },
+  "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
+  "main": "vite.config.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

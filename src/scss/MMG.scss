@@ -1,0 +1,371 @@
+$background-color_1: #5e5e5e;
+$background-color_2: #e81d1d;
+
+@keyframes move {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+
+.modalOverlay {
+    backdrop-filter: blur(10px);
+    width: 96.5%;
+    height: 96%;
+    display: none;
+    position: absolute;
+    z-index: 6;
+
+    .modal-game {
+        flex-direction: column;
+        height: 400px;
+        width: 680px;
+        background-color: rgba(255, 255, 255, 0.4);
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        border: 2px solid rgba(255, 255, 255, 0.6);
+        border-radius: 20px;
+        position: absolute;
+
+        .img-block {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 30px;
+            left: 0;
+            right: 0;
+
+            .img {
+                height: 200px;
+                width: 300px;
+            }
+        }
+
+        .content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            bottom: 100px;
+            left: 0;
+            right: 0;
+            font-size: 30px;
+            color: #000;
+        }
+
+        .btn-back {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+    }
+}
+
+.warningDimension {
+    background-color: $background-color_2;
+    padding: 10px;
+    color: #fff;
+    width: fit-content;
+    margin: -20px auto;
+
+    .warning {
+        height: 20px;
+        width: 20px;
+        margin-right: 8px;
+    }
+}
+
+.containerForPageGame {
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-image: url(../assets/img/background-game.png);
+    background-clip: border-box;
+    background-size: cover;
+    background-repeat: no-repeat;
+    object-fit: contain;
+    border: 1px solid #e3e6f0;
+    border-radius: 0.35rem;
+    margin-top: 50px;
+    min-height: 90vh;
+    z-index: 5;
+
+    .newGame {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    .topPage {
+        display: flex;
+        flex-direction: row;
+
+        .backBtn {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            cursor: pointer;
+        }
+
+        .mark {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 30px;
+        }
+
+        .timer {
+            position: absolute;
+            top: 16px;
+            right: 150px;
+            font-size: 30px;
+        }
+    }
+
+
+    .containerForPageBody {
+        height: 90vh;
+
+        .card-element {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            .card-container-4 {
+                display: grid;
+                grid-template-columns: auto auto auto auto;
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 25vh;
+                bottom: 25vh;
+            }
+
+            .card-container-6 {
+                display: grid;
+                grid-template-columns: auto auto auto auto auto auto;
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 60px;
+                bottom: 60px;
+            }
+
+            .card-container-8 {
+                display: grid;
+                grid-template-columns: auto auto auto auto auto auto auto auto;
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 60px;
+                bottom: 60px;
+            }
+
+            .card-container-10 {
+                display: grid;
+                grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 60px;
+                bottom: 60px;
+            }
+        }
+    }
+}
+
+.cardFold {
+    height: 100px;
+    width: 100px;
+    background-color: $background-color_1;
+    object-fit: contain;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 8px;
+    cursor: pointer;
+
+    img {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+.cardUnfold {
+    height: 100px;
+    width: 100px;
+    background-color: $background-color_1;
+    border-radius: 20px;
+    object-fit: contain;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 8px;
+
+    img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .border {
+        height: 80px;
+        width: 80px;
+        border-radius: 20px;
+        object-fit: contain;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            width: 50px;
+            height: 50px;
+        }
+    }
+}
+
+.btn {
+    width: 600px;
+    font-size: 20px;
+    height: 60px;
+    border: none;
+    outline: none;
+    background: #c38b8b;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    margin: 16px;
+
+    &::before {
+        position: absolute;
+        content: "";
+        width: calc(100% + 4px);
+        height: calc(100% + 4px);
+        left: -2px;
+        top: -2px;
+        background: linear-gradient(124deg,
+                #ff2400,
+                #e81d1d,
+                #e8b71d,
+                #e3e81d,
+                #1de840,
+                #1ddde8,
+                #2b1de8,
+                #dd00f3,
+                #dd00f3);
+        background-size: 400%;
+        z-index: -1;
+        filter: blur(5px);
+        animation: move 10s linear infinite;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+        border-radius: 10px;
+    }
+
+    &:hover::before {
+        opacity: 1;
+    }
+
+    &::after {
+        z-index: -1;
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgb(238, 174, 202);
+        background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+        left: 0;
+        top: 0;
+        border-radius: 10px;
+    }
+}
+
+@media (max-width: 1920px) {
+    .card-container-8,
+    .card-container-10 {
+        .cardFold {
+            height: 60px;
+            width: 60px;
+            background-color: $background-color_1;
+            object-fit: contain;
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 8px;
+            cursor: pointer;
+
+            img {
+                width: 30px;
+                height: 30px;
+            }
+        }
+
+        .cardUnfold {
+            height: 60px;
+            width: 60px;
+            background-color: $background-color_1;
+            border-radius: 20px;
+            object-fit: contain;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 8px;
+
+            img {
+                width: 30px;
+                height: 30px;
+            }
+
+            .border {
+                height: 45px;
+                width: 45px;
+                border-radius: 20px;
+                object-fit: contain;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                img {
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+        }
+    }
+}

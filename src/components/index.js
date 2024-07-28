@@ -3,6 +3,7 @@ export * from './layout/layout'
 export * from './memory-game/Card'
 export * from './memory-game/Modal'
 export * from './memory-game/NewGame'
+export * from './memory-game/getLayout/getLayout'
 
 export * from './sidebar/component/navItems'
 export * from './sidebar/component/sidebarHide'

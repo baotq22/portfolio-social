@@ -8,13 +8,13 @@ import useStore from "../../store/index";
 const sidebarNavItemsForAuthenticated = [
     {
         display: 'Welcome',
-        to: '/',
-        section: ''
+        to: '/portfolio-social',
+        section: 'portfolio-social'
     },
     {
         display: 'Memory Game',
-        to: '/memory-game',
-        section: 'memory-game'
+        to: '/portfolio-social/memory-game',
+        section: 'portfolio-social/memory-game'
     }
 ]
 
@@ -29,9 +29,11 @@ export const SideBar = () => {
 
     // change active index
     useEffect(() => {
-        const curPath = window.location.pathname.split('/')[1];
+        const curPath = window.location.pathname.split('/')[1] + (window.location.pathname.split('/')[2] ? '/' + window.location.pathname.split('/')[2] : '');
         const activeItem = currentNavbarItems.findIndex(item => item.section === curPath);
         setActiveIndex(curPath.length === 0 ? 0 : activeItem);
+        console.log(curPath)
+        console.log(activeItem)
     }, [location, currentNavbarItems]);
 
     useEffect(() => {

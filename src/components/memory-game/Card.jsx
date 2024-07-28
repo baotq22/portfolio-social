@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
+import defaultBack from "../../assets/img/mystery-box.png"
 
 export const Card = ({ cards, images, selectTwoCards, disabled, flipped, isFlipped2Cards }) => {
     const [isFold, setIsFold] = useState(true)
-    const defaultBack = 'src/assets/img/mystery-box.png'
     useEffect(() => {
         setIsFold(!flipped)
     }, [flipped])

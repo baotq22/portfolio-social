@@ -1,8 +1,5 @@
 import '../scss/MMG.scss'
-import getLayout4 from '../assets/json/layout4.json'
-import getLayout6 from '../assets/json/layout6.json'
-import getLayout8 from '../assets/json/layout8.json'
-import getLayout10 from '../assets/json/layout10.json'
+import { getLayout4, getLayout6, getLayout8, getLayout10 } from '../components/index'
 import { useEffect, useState } from 'react'
 import { v4 as uuidv4 } from 'uuid'
 import backButton from '../assets/img/thumb_back.png'
@@ -13,7 +10,7 @@ import GameOver from '../assets/audio/gameover.mp3'
 import Victory from '../assets/audio/victory.mp3'
 import GameOverLabel from '../assets/img/gameover.png'
 import VictoryLabel from '../assets/img/victory.png'
-import {Modal, NewGame, Card} from '../components/index'
+import { Modal, NewGame, Card } from '../components/index'
 
 const Dimensions = () => {
     const [heightScreen, setHeightScreen] = useState({ height: window.innerHeight })
@@ -86,7 +83,7 @@ const MemoryGame = () => {
         setPlay(true)
         setLayout(4)
         timerByLayout(4)
-        const shuffleAction = [...getLayout4, ...getLayout4]
+        const shuffleAction = [...getLayout4(), ...getLayout4()]
             .sort(() => Math.random() - 0.5)
             .map((card) => ({ ...card, id: uuidv4(), matched: false }))
 
@@ -96,7 +93,7 @@ const MemoryGame = () => {
         setPlay(true)
         setLayout(6)
         timerByLayout(6)
-        const shuffleAction = [...getLayout6, ...getLayout6]
+        const shuffleAction = [...getLayout6(), ...getLayout6()]
             .sort(() => Math.random() - 0.5)
             .map((card) => ({ ...card, id: uuidv4(), matched: false }))
 
@@ -106,7 +103,7 @@ const MemoryGame = () => {
         setPlay(true)
         setLayout(8)
         timerByLayout(8)
-        const shuffleAction = [...getLayout8, ...getLayout8]
+        const shuffleAction = [...getLayout8(), ...getLayout8()]
             .sort(() => Math.random() - 0.5)
             .map((card) => ({ ...card, id: uuidv4(), matched: false }))
 
@@ -116,7 +113,7 @@ const MemoryGame = () => {
         setPlay(true)
         setLayout(10)
         timerByLayout(10)
-        const shuffleAction = [...getLayout10, ...getLayout10]
+        const shuffleAction = [...getLayout10(), ...getLayout10()]
             .sort(() => Math.random() - 0.5)
             .map((card) => ({ ...card, id: uuidv4(), matched: false }))
 
@@ -203,7 +200,7 @@ const MemoryGame = () => {
                 label={GameOverLabel}
                 content="Times Up!"
             />
-            <Modal 
+            <Modal
                 isModal={{ display: victory ? 'flex' : '' }}
                 back={backToMain}
                 label={VictoryLabel}
@@ -219,11 +216,11 @@ const MemoryGame = () => {
                             onClick10={shuffleCard10}
                         />}
                     <div className="card-element">
-                    {play && <div className='topPage'>
-                        <img className='backBtn' src={backButton} width="50px" height="50px" onClick={backToMain} />
-                        <div className='mark'>Score: {mark}</div>
-                        <div className='timer'>Time Left: {formatTime(time)}</div>
-                    </div>}
+                        {play && <div className='topPage'>
+                            <img className='backBtn' src={backButton} width="50px" height="50px" onClick={backToMain} />
+                            <div className='mark'>Score: {mark}</div>
+                            <div className='timer'>Time Left: {formatTime(time)}</div>
+                        </div>}
                         {play && layout == 4 &&
                             <>
                                 <div className="card-element"></div>

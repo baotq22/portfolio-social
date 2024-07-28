@@ -1,4 +1,5 @@
 import { SocialLinks } from "../components"
+import avatar from "../assets/img/HNG_8079.jpg"
 
 const App = () => {
   return (
@@ -8,7 +9,7 @@ const App = () => {
           <div className="frame">
             <div className="avatar">
               <img
-                src="src/assets/img/HNG_8079.jpg"
+                src={avatar}
                 alt=""
                 width="100"
                 height="100"

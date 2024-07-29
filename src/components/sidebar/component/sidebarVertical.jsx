@@ -1,8 +1,19 @@
+import { useEffect, useState } from "react"
 import showSidebar from "../../../assets/svg/sidebar-svgrepo-com.svg"
 import switchDirection from "../../../assets/svg/switch-horizontal-svgrepo-com.svg"
-import {NavItems} from "../../index"
+import useStore from "../../../store/index"
+import { NavItems } from "../../index"
 
 export const SidebarVertical = ({ onClickShow, onChangeDirection, clickToClose, sidebarRef, direction, rotate, currentItems, activeIndex, clickAction }) => {
+    const { width, setWidth } = useStore()
+
+    useEffect(() => {
+        const handleResize = () => setWidth(window.innerWidth);
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    });
+
+    console.log(width)
     return (
         <div className='overlay'>
             <div className='sidebar'>
@@ -12,11 +23,13 @@ export const SidebarVertical = ({ onClickShow, onChangeDirection, clickToClose, 
                         className={rotate}
                         onClick={onClickShow}
                     />
-                    <img
-                        src={switchDirection}
-                        className='sidebar__button'
-                        onClick={onChangeDirection}
-                    />
+                    {width > 576 &&
+                        <img
+                            src={switchDirection}
+                            className='sidebar__button'
+                            onClick={onChangeDirection}
+                        />
+                    }
                 </div>
                 <div ref={sidebarRef} className="sidebar__menu">
                     {currentItems?.map((item, index) => {

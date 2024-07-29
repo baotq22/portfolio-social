@@ -31,14 +31,8 @@ $background-color_3: #b5bdcb;
 
     .intro {
         .frame {
-            height: 700px;
-            width: 800px;
             background-color: rgba(255, 255, 255, 0.4);
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
             margin: auto;
             border: 2px solid rgba(255, 255, 255, 0.6);
             border-radius: 20px;
@@ -49,10 +43,16 @@ $background-color_3: #b5bdcb;
                 align-items: center;
                 justify-content: center;
 
-                img {
+                .avatarImg {
                     border: 2px solid rgba(255, 255, 255, 0.6);
                     border-radius: 50%;
                     margin: -50px 0 10px 0;
+                }
+
+                .avatarImgMobile {
+                    border: 2px solid rgba(255, 255, 255, 0.6);
+                    border-radius: 50%;
+                    margin: 0 0 10px 0;
                 }
             }
 
@@ -95,32 +95,101 @@ $background-color_3: #b5bdcb;
                 }
             }
 
-            .social {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                padding: 10px;
+            .social-container {
 
-                .title {
-                    text-transform: uppercase;
-                    font-size: x-large;
+                .social {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 4px;
+                    
+                    .title {
+                        text-transform: uppercase;
+                        font-size: x-large;
+                    }
+                    
+                    .icon {
+                        display: flex;
+                        flex-direction: row;
+                        
+                        div {
+                            padding: 20px;
+                            
+                            img {
+                                height: 3rem;
+                                width: 3rem
+                            }
+                        }
+                    }
                 }
 
-                .icon {
+                .social-sm {
                     display: flex;
-                    flex-direction: row;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 10px;
+                    
+                    .title {
+                        text-transform: uppercase;
+                        font-size: x-large;
+                    }
 
-                    div {
-                        padding: 20px;
+                    .icon {
+                        display: grid;
+                        grid-template-columns: auto auto auto auto;
 
-                        img {
-                            height: 3rem;
-                            width: 3rem
+                        div {
+                            padding: 16px;
+                            
+                            img {
+                                height: 3rem;
+                                width: 3rem
+                            }
                         }
                     }
                 }
             }
+        }
+
+        .frame-lg {   
+            height: 700px;
+            width: 800px;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        .frame-md {
+            height: 700px;
+            width: 600px;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        .frame-sm {
+            height: 800px;
+            width: 400px;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        .frame-xsm {
+            height: 700px;
+            width: 320px;
+            top: 1rem;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            overflow: scroll;
+            padding-top: 1rem;
+
         }
     }
 }

@@ -1,3 +1,4 @@
+import { useEffect } from "react"
 import fb from "../../assets/social-icon/fb.png"
 import ig from "../../assets/social-icon/ig.png"
 import li from "../../assets/social-icon/li.png"
@@ -5,8 +6,17 @@ import rd from "../../assets/social-icon/rd.png"
 import sc from "../../assets/social-icon/sc.png"
 import tt from "../../assets/social-icon/tt.svg"
 import yb from "../../assets/social-icon/yb.png"
+import useStore from "../../store"
 
 export const SocialLinks = () => {
+    const { width, setWidth } = useStore()
+
+    useEffect(() => {
+        const handleResize = () => setWidth(window.innerWidth);
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    });
+
     const socialLinksJSON = [
         {
             "src": fb,
@@ -39,7 +49,7 @@ export const SocialLinks = () => {
     ]
 
     return (
-        <div className="social">
+        <div className={width > 640 ? "social" : "social-sm"}>
             <div className="title">SOCIAL LINKS</div>
             <div className="icon">
                 {socialLinksJSON.map((social, index) => (

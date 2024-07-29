@@ -1,15 +1,26 @@
 import { SocialLinks } from "../components"
 import avatar from "../assets/img/HNG_8079.jpg"
+import { useEffect } from "react";
+import useStore from "../store";
 
 const App = () => {
+  const { width, setWidth } = useStore()
+
+  useEffect(() => {
+    const handleResize = () => setWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  });
+
   return (
     <>
       <div className="containerForPage">
         <div className="intro">
-          <div className="frame">
+          <div className={`frame ${width > 839 ? 'frame-lg' : (width > 640 ? 'frame-md' : (width > 400 ? 'frame-sm' : 'frame-xsm'))}`}>
             <div className="avatar">
               <img
                 src={avatar}
+                className={`${width > 400 ? "avatarImg" : "avatarImgMobile" }`}
                 alt=""
                 width="100"
                 height="100"
@@ -35,7 +46,9 @@ const App = () => {
               </ul>
             </div>
             <hr />
-            <SocialLinks />
+            <div className="social-container">
+              <SocialLinks />
+            </div>
           </div>
         </div>
       </div>

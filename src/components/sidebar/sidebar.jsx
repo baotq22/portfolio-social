@@ -27,13 +27,10 @@ export const SideBar = () => {
     const indicatorRef = useRef();
     const location = useLocation();
 
-    // change active index
     useEffect(() => {
         const curPath = window.location.pathname.split('/')[1] + (window.location.pathname.split('/')[2] ? '/' + window.location.pathname.split('/')[2] : '');
         const activeItem = currentNavbarItems.findIndex(item => item.section === curPath);
         setActiveIndex(curPath.length === 0 ? 0 : activeItem);
-        console.log(curPath)
-        console.log(activeItem)
     }, [location, currentNavbarItems]);
 
     useEffect(() => {

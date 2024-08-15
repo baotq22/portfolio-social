@@ -8,7 +8,9 @@ const useStore = create((set) => ({
   isFlip: false,
   setIsFlip: (isFlip) => set({ isFlip }),
   width: window.innerWidth,
-  setWidth: (width) => set({ width })
+  setWidth: (width) => set({ width }),
+  isOpen: false,
+  toggle: (isOpen) => set({ isOpen })
 }))
 
 export default useStore;

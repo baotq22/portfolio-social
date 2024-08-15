@@ -1,16 +1,24 @@
-import { SocialLinks } from "../components"
+import { SocialLinks, ModalDonate } from "../components"
 import avatar from "../assets/img/HNG_8079.jpg"
 import { useEffect } from "react";
 import useStore from "../store";
 
 const App = () => {
-  const { width, setWidth } = useStore()
+  const { width, setWidth, isOpen, toggle } = useStore()
 
   useEffect(() => {
     const handleResize = () => setWidth(window.innerWidth);
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   });
+
+  const ModalOpen = () => {
+    toggle(true)
+  }
+
+  const ModalClose = () => {
+    toggle(false)
+  }
 
   return (
     <>
@@ -20,7 +28,7 @@ const App = () => {
             <div className="avatar">
               <img
                 src={avatar}
-                className={`${width > 400 ? "avatarImg" : "avatarImgMobile" }`}
+                className={`${width > 400 ? "avatarImg" : "avatarImgMobile"}`}
                 alt=""
                 width="100"
                 height="100"
@@ -36,7 +44,7 @@ const App = () => {
             <div className="quote-source">
               - Favourite quote from I Am Affirmation App -
             </div>
-            <div className="basicInfo">
+            <div className="basic-info">
               <h2>Basic Info</h2>
               <ul>
                 <li className="details">- SW Developer in Hanoi, Vietnam</li>
@@ -45,10 +53,19 @@ const App = () => {
                 <li className="details">- Pizza, Spaghetti</li>
               </ul>
             </div>
+            <div className="btn-donate">
+              <div className="text-btn" onClick={() => ModalOpen()}>Donate me here</div>
+            </div>
             <hr />
             <div className="social-container">
               <SocialLinks />
             </div>
+            <ModalDonate isOpen={isOpen} close={() => ModalClose()}/>
+            {/* <ModalDonate isOpen={isOpen} handleClose={() => ModalClose()}>
+              <Donate>
+                <h1> Awesome modal </h1>
+              </Donate>
+            </ModalDonate> */}
           </div>
         </div>
       </div>

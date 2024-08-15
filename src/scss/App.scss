@@ -82,7 +82,7 @@ $background-color_3: #b5bdcb;
                 justify-content: flex-end;
             }
 
-            .basicInfo {
+            .basic-info {
                 padding: 20px;
 
                 h2 {
@@ -95,6 +95,36 @@ $background-color_3: #b5bdcb;
                 }
             }
 
+            .btn-donate {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding: 8px;
+                background: rgb(60, 197, 192);
+                background: linear-gradient(0deg, rgba(60, 197, 192, 1) 0%, rgba(221, 159, 213, 1) 100%);
+                border-radius: 0.5rem;
+                color: white;
+                width: fit-content;
+                margin: 0 auto;
+                cursor: pointer;
+
+                .text-btn {
+                    text-transform: uppercase;
+                    font-size: large;
+                }
+            }
+
+            .btn-donate:hover {
+                background: rgb(125, 188, 185);
+                background: linear-gradient(0deg, rgba(125, 188, 185, 1) 0%, rgba(213, 204, 212, 1) 100%);
+            }
+
+            .btn-donate:active {
+                background: rgb(14, 214, 205);
+                background: linear-gradient(0deg, rgba(14, 214, 205, 1) 0%, rgba(214, 45, 193, 1) 100%);
+            }
+
             .social-container {
 
                 .social {
@@ -103,19 +133,19 @@ $background-color_3: #b5bdcb;
                     align-items: center;
                     justify-content: center;
                     padding: 4px;
-                    
+
                     .title {
                         text-transform: uppercase;
                         font-size: x-large;
                     }
-                    
+
                     .icon {
                         display: flex;
                         flex-direction: row;
-                        
+
                         div {
                             padding: 20px;
-                            
+
                             img {
                                 height: 3rem;
                                 width: 3rem
@@ -130,7 +160,7 @@ $background-color_3: #b5bdcb;
                     align-items: center;
                     justify-content: center;
                     padding: 10px;
-                    
+
                     .title {
                         text-transform: uppercase;
                         font-size: x-large;
@@ -142,7 +172,7 @@ $background-color_3: #b5bdcb;
 
                         div {
                             padding: 16px;
-                            
+
                             img {
                                 height: 3rem;
                                 width: 3rem
@@ -153,7 +183,7 @@ $background-color_3: #b5bdcb;
             }
         }
 
-        .frame-lg {   
+        .frame-lg {
             height: 700px;
             width: 800px;
             top: 0;

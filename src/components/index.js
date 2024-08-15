@@ -13,3 +13,4 @@ export * from './sidebar/component/sidebarVertical'
 export * from './sidebar/sidebar'
 
 export * from './pages/social-links'
+export * from './pages/ModalDonate'

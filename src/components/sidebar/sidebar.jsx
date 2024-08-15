@@ -8,13 +8,13 @@ import useStore from "../../store/index";
 const sidebarNavItemsForAuthenticated = [
     {
         display: 'Welcome',
-        to: '/portfolio-social',
-        section: 'portfolio-social'
+        to: '/',
+        section: ''
     },
     {
         display: 'Memory Game',
-        to: '/portfolio-social/memory-game',
-        section: 'portfolio-social/memory-game'
+        to: '/memory-game',
+        section: 'memory-game'
     }
 ]
 
